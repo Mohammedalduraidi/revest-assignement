@@ -38,9 +38,11 @@ The entire application can be run seamlessly using Docker Compose. Below are det
    npm run build
    npm run start
    ```
+
+
 Setup your application by visiting `http://localhost:4444/swagger`
 
-### Please add this token on Swagger Authorize for Product Management to be able to test the APIs  ```taUOuW0VubdhoP4YGBacRsgBQ6/WsBc0TtD+9ajoBZI=```
+**Add this token on Swagger Authorize for Product Management to be able to test the APIs  ```taUOuW0VubdhoP4YGBacRsgBQ6/WsBc0TtD+9ajoBZI=```**
 
 
 2. Order management
@@ -51,9 +53,14 @@ Setup your application by visiting `http://localhost:4444/swagger`
    npm run build
    npm run start
    ```
+
+
 Setup your application by visiting `http://localhost:5555/swagger`
 
-### Please add this token on Swagger Authorize for Order Management to be able to test the APIs ```Rpdbn/+n2Dsgix6rN+btMwC8eAsEaM59a508+sNvTFo=```
+**Add this token on Swagger Authorize for Order Management to be able to test the APIs ```Rpdbn/+n2Dsgix6rN+btMwC8eAsEaM59a508+sNvTFo=```**
+
+
+
 
 3. Dynamic Signup Form
   ```bash

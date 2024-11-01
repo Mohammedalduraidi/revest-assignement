@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+  product_management:
+    build:
+      context: ./prdouct-managment
+    container_name: product_management_service
+    env_file:
+      - ./prdouct-managment/.env
+    ports:
+      - 4444:4444
+    networks:
+      - app-network
+    depends_on:
+      - product_db
+
+  product_db:
+    image: postgres:13.3
+    container_name: product_management_db
+    environment:
+      POSTGRES_USER: revest
+      POSTGRES_PASSWORD: revest
+      POSTGRES_DB: revestproduct
+    networks:
+      - app-network
+    volumes:
+      - product-db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  order_management:
+    build:
+      context: ./order-managment
+    container_name: order_management_service
+    env_file:
+      - ./order-managment/.env
+    ports:
+      - 5555:5555
+    networks:
+      - app-network
+    depends_on:
+      - order_db
+
+  order_db:
+    image: postgres:13.3
+    container_name: order_management_db
+    environment:
+      POSTGRES_USER: revest
+      POSTGRES_PASSWORD: revest
+      POSTGRES_DB: revestorder
+    networks:
+      - app-network
+    volumes:
+      - order-db-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+  nextjs:
+    build:
+      context: ./dynamic-form
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  product-db-data:
+  order-db-data:

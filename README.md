@@ -64,4 +64,5 @@ Setup your application by visiting `http://localhost:5555/swagger`
 Setup your application by visiting `http://localhost:3000`
 
 
-**For ease, make sure you're in the root directory where the docker-compose.yml file is located and run ```docker compose up --build -d``` to run all these 3 application in one time and start testing it**
+## Docker Usage
+Make sure you're in the root directory where the docker-compose.yml file is located and run ```docker compose up --build -d``` to run all these 3 application in one time and start testing it
